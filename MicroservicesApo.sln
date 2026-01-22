@@ -1,0 +1,50 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35931.197
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FrontEnd", "FrontEnd", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "GateWay", "GateWay", "{9AA43D78-913F-441A-98C2-58B1C04D81B8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Integration", "Integration", "{72D77964-53F4-4CDB-AEAD-A5B4A06D9028}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{05F8F280-E751-45B4-8603-E277614D0967}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Apo.Services.CouponAPI", "Apo.Services.CouponAPI\Apo.Services.CouponAPI.csproj", "{1A7ACC9D-5243-44D3-B33E-1278E13B14DE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Apo.Web", "Apo.Web\Apo.Web.csproj", "{48A491F6-D089-4704-B914-CF6962E757C2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Apo.Service.AuthAPI", "Apo.Service.AuthAPI\Apo.Service.AuthAPI.csproj", "{36C4BDEC-63A2-4F29-9CCA-7ECC587BB1FC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1A7ACC9D-5243-44D3-B33E-1278E13B14DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1A7ACC9D-5243-44D3-B33E-1278E13B14DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1A7ACC9D-5243-44D3-B33E-1278E13B14DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1A7ACC9D-5243-44D3-B33E-1278E13B14DE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{48A491F6-D089-4704-B914-CF6962E757C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{48A491F6-D089-4704-B914-CF6962E757C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{48A491F6-D089-4704-B914-CF6962E757C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{48A491F6-D089-4704-B914-CF6962E757C2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{36C4BDEC-63A2-4F29-9CCA-7ECC587BB1FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{36C4BDEC-63A2-4F29-9CCA-7ECC587BB1FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{36C4BDEC-63A2-4F29-9CCA-7ECC587BB1FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{36C4BDEC-63A2-4F29-9CCA-7ECC587BB1FC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{1A7ACC9D-5243-44D3-B33E-1278E13B14DE} = {05F8F280-E751-45B4-8603-E277614D0967}
+		{48A491F6-D089-4704-B914-CF6962E757C2} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{36C4BDEC-63A2-4F29-9CCA-7ECC587BB1FC} = {05F8F280-E751-45B4-8603-E277614D0967}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A124197E-C220-4FD9-B0D9-70BEB4336D3C}
+	EndGlobalSection
+EndGlobal

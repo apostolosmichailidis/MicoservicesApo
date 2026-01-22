@@ -1,0 +1,28 @@
+# Build folders
+bin/
+obj/
+
+# Visual Studio
+.vs/
+*.user
+*.suo
+
+# Rider / VS Code
+.idea/
+.vscode/
+
+# NuGet
+packages/
+*.nupkg
+*.snupkg
+
+# Publish
+publish/
+
+# ASP.NET Core configs
+appsettings.Development.json
+appsettings.Local.json
+appsettings.*.local.json
+
+# User secrets
+secrets.json
