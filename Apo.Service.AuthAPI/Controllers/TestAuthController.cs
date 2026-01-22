@@ -7,7 +7,7 @@ namespace Apo.Service.AuthAPI.Controllers
     [Route("api/test")]
     public class TestAuthController : ControllerBase
     {
-        [Authorize("Admin")]
+        [Authorize]
         [HttpGet("test")]
         public IActionResult Test()
         {

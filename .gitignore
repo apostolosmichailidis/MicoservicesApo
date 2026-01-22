@@ -26,3 +26,6 @@ appsettings.*.local.json
 
 # User secrets
 secrets.json
+
+Apo.Service.AuthAPI/Keys/
+

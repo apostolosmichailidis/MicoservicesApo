@@ -1,13 +1,13 @@
-using System.Security.Cryptography;
+using Apo.Service.AuthAPI.Extensions;
 using Apo.Service.AuthAPI.Models;
 using Apo.Service.AuthAPI.Service;
 using Apo.Service.AuthAPI.Service.IService;
 using Apo.Services.AuthAPI.Data;
+using Apo.Services.AuthAPI.Models;
 using FluentValidation;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.IdentityModel.Tokens;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -17,7 +17,7 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 );
 
 //SymmetricAlgorithm HMAC SHA256 Authentication
-//builder.Services.Configure<JwtOptionsForSymmetricHmacSha256>(builder.Configuration.GetSection("ApiSettings:JwtOptionsForSymmetricHmacSha256"));
+builder.Services.Configure<JwtOptionsForSymmetricHmacSha256>(builder.Configuration.GetSection("ApiSettings:JwtOptionsForSymmetricHmacSha256"));
 
 //AssymetricAlgorithm ECDSA ES256 Authentication
 builder.Services.Configure<JwtOptionsForAssymetricES256>(builder.Configuration.GetSection("ApiSettings:JwtOptionsForAssymetricES256"));
@@ -31,7 +31,7 @@ builder.Services.AddControllers();
 builder.Services.AddValidatorsFromAssemblyContaining<Program>();
 
 //SymmetricAlgorithm HMAC SHA256 Authentication
-//builder.Services.AddScoped<IJWTTokenGenerator, JwtTokenGeneratorUsingSymmetricHmacSha256>();
+builder.Services.AddScoped<IJWTTokenGenerator, JwtTokenGeneratorUsingSymmetricHmacSha256>();
 
 //AssymetricAlgorithm ECDSA ES256 Authentication
 builder.Services.AddScoped<IJWTTokenGenerator, JwtTokenGeneratorUsingES256>();
@@ -40,60 +40,21 @@ builder.Services.AddScoped<IAuthService, AuthService>();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 
-
-//SymmetricAlgorithm HMAC SHA256 Authentication
-//var jwtOptions = builder.Configuration.GetSection("ApiSettings:JwtOptionsForSymmetricHmacSha256").Get<JwtOptionsForSymmetricHmacSha256>();
-
-//builder.Services.AddAuthentication(options => { 
-//    options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme; 
-//    options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme; 
-//});
-
-//builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
-//    .AddJwtBearer(JwtBearerDefaults.AuthenticationScheme, options =>
-//    {
-//        options.TokenValidationParameters = new TokenValidationParameters
-//        {
-//            ValidateIssuer = true,
-//            ValidateAudience = true,
-//            ValidateLifetime = true,
-//            ValidateIssuerSigningKey = true,
-//            ValidIssuer = jwtOptions.Issuer,
-//            ValidAudience = jwtOptions.Audience,
-//            IssuerSigningKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(jwtOptions.Secret))
-//        };
-//    });
-//SymmetricAlgorithm HMAC SHA256 Authentication --END--
-
-//AssymetricAlgorithm ECDSA ES256 Authentication
-var jwtOptions = builder.Configuration.GetSection("ApiSettings:JwtOptionsForAssymetricES256").Get<JwtOptionsForAssymetricES256>();
-
 builder.Services.AddAuthentication(options =>
 {
     options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
     options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
 });
 
-var publicKeyPem = File.ReadAllText(jwtOptions.PublicKeyPath); 
-var ecdsa = ECDsa.Create(); 
-ecdsa.ImportFromPem(publicKeyPem);
-
-builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
-    .AddJwtBearer(JwtBearerDefaults.AuthenticationScheme, options =>
-    {
-        options.TokenValidationParameters = new TokenValidationParameters
-        {
-            ValidateIssuer = true,
-            ValidateAudience = true,
-            ValidateLifetime = true,
-            ValidateIssuerSigningKey = true,
-            ValidIssuer = jwtOptions.Issuer,
-            ValidAudience = jwtOptions.Audience,
-            IssuerSigningKey = new ECDsaSecurityKey(ecdsa)
-        };
-    });
-
+//AssymetricAlgorithm ECDSA ES256 Authentication
+var JwtOptionsForAssymetricES256 = builder.Configuration.GetSection("ApiSettings:JwtOptionsForAssymetricES256").Get<JwtOptionsForAssymetricES256>();
+builder.Services.AddJwtAuthenticationForAssymetricES256(JwtOptionsForAssymetricES256);
 //AssymetricAlgorithm ECDSA ES256 Authentication --END--
+
+//SymmetricAlgorithm HMAC SHA256 Authentication
+var JwtOptionsForSymmetricHmacSha256 = builder.Configuration.GetSection("ApiSettings:JwtOptionsForSymmetricHmacSha256").Get<JwtOptionsForSymmetricHmacSha256>();
+builder.Services.AddJwtAuthenticationForSymmetricHmacSha256(JwtOptionsForSymmetricHmacSha256);
+//SymmetricAlgorithm HMAC SHA256 Authentication --END--
 
 builder.Services.AddSwaggerGen(c =>
 {
