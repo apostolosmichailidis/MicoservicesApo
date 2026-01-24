@@ -17,7 +17,7 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 );
 
 //SymmetricAlgorithm HMAC SHA256 Authentication
-builder.Services.Configure<JwtOptionsForSymmetricHmacSha256>(builder.Configuration.GetSection("ApiSettings:JwtOptionsForSymmetricHmacSha256"));
+//builder.Services.Configure<JwtOptionsForSymmetricHmacSha256>(builder.Configuration.GetSection("ApiSettings:JwtOptionsForSymmetricHmacSha256"));
 
 //AssymetricAlgorithm ECDSA ES256 Authentication
 builder.Services.Configure<JwtOptionsForAssymetricES256>(builder.Configuration.GetSection("ApiSettings:JwtOptionsForAssymetricES256"));
@@ -31,7 +31,7 @@ builder.Services.AddControllers();
 builder.Services.AddValidatorsFromAssemblyContaining<Program>();
 
 //SymmetricAlgorithm HMAC SHA256 Authentication
-builder.Services.AddScoped<IJWTTokenGenerator, JwtTokenGeneratorUsingSymmetricHmacSha256>();
+//builder.Services.AddScoped<IJWTTokenGenerator, JwtTokenGeneratorUsingSymmetricHmacSha256>();
 
 //AssymetricAlgorithm ECDSA ES256 Authentication
 builder.Services.AddScoped<IJWTTokenGenerator, JwtTokenGeneratorUsingES256>();
@@ -52,8 +52,8 @@ builder.Services.AddJwtAuthenticationForAssymetricES256(JwtOptionsForAssymetricE
 //AssymetricAlgorithm ECDSA ES256 Authentication --END--
 
 //SymmetricAlgorithm HMAC SHA256 Authentication
-var JwtOptionsForSymmetricHmacSha256 = builder.Configuration.GetSection("ApiSettings:JwtOptionsForSymmetricHmacSha256").Get<JwtOptionsForSymmetricHmacSha256>();
-builder.Services.AddJwtAuthenticationForSymmetricHmacSha256(JwtOptionsForSymmetricHmacSha256);
+//var JwtOptionsForSymmetricHmacSha256 = builder.Configuration.GetSection("ApiSettings:JwtOptionsForSymmetricHmacSha256").Get<JwtOptionsForSymmetricHmacSha256>();
+//builder.Services.AddJwtAuthenticationForSymmetricHmacSha256(JwtOptionsForSymmetricHmacSha256);
 //SymmetricAlgorithm HMAC SHA256 Authentication --END--
 
 builder.Services.AddSwaggerGen(c =>
