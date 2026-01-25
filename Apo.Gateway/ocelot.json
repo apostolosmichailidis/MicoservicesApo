@@ -1,0 +1,31 @@
+{
+    "Routes": [
+        {
+            "DownstreamPathTemplate": "/api/auth/{everything}",
+            "DownstreamScheme": "https",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 7002
+                }
+            ],
+            "UpstreamPathTemplate": "/api/auth/{everything}",
+            "UpstreamHttpMethod": [ "POST", "GET" ]
+        }
+    ],
+    "SwaggerEndPoints": [
+        {
+            "Key": "AuthAPI",
+            "Config": [
+                {
+                    "Name": "Auth API",
+                    "Version": "v1",
+                    "Url": "https://localhost:7002/swagger/v1/swagger.json"
+                }
+            ]
+        }
+    ],
+    "GlobalConfiguration": {
+        "BaseUrl": "https://localhost:7000"
+    }
+}

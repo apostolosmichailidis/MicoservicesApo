@@ -2,9 +2,7 @@
 using Apo.Services.CouponAPI.Models;
 using Apo.Services.CouponAPI.Models.Dto;
 using AutoMapper;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using static Azure.Core.HttpHeader;
 
 namespace Apo.Services.CouponAPI.Controllers
 {

@@ -4,10 +4,9 @@ using Microsoft.AspNetCore.Mvc;
 namespace Apo.Service.AuthAPI.Controllers
 {
     [ApiController]
-    [Route("api/test")]
+    [Route("api/auth")]
     public class TestAuthController : ControllerBase
     {
-        [Authorize(Roles = "ADMIN")]
         [HttpGet("test")]
         public IActionResult Test()
         {
