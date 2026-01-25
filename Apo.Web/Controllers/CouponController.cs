@@ -3,11 +3,13 @@ using System.Reflection;
 using Apo.Web.Models;
 using Apo.Web.Service;
 using Apo.Web.Service.IService;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 
 namespace Apo.Web.Controllers
 {
+    [Authorize]
     public class CouponController : Controller
     {
         private readonly ICouponService _couponService;

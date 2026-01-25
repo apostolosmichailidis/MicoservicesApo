@@ -18,7 +18,7 @@ namespace Apo.Web.Service
             {
                 ApiType = Apo.Web.Utility.SD.ApiType.POST,
                 Data = assingneRoleDto,
-                Url = Apo.Web.Utility.SD.AuthAPIBase + $"api/auth/assing-role"
+                Url = Apo.Web.Utility.SD.AuthAPIBase + $"/api/auth/assing-role"
             });
         }
 
@@ -28,7 +28,7 @@ namespace Apo.Web.Service
             {
                 ApiType = Apo.Web.Utility.SD.ApiType.POST,
                 Data = loginDto,
-                Url = Apo.Web.Utility.SD.AuthAPIBase + $"api/auth/login"
+                Url = Apo.Web.Utility.SD.AuthAPIBase + $"/api/auth/login"
             });
         }
 
@@ -38,7 +38,7 @@ namespace Apo.Web.Service
             {
                 ApiType = Apo.Web.Utility.SD.ApiType.POST,
                 Data = registerDto,
-                Url = Apo.Web.Utility.SD.AuthAPIBase + $"api/auth/register"
+                Url = Apo.Web.Utility.SD.AuthAPIBase + $"/api/auth/register"
             });
         }
     }
