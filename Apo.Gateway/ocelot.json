@@ -1,26 +1,38 @@
 {
     "Routes": [
         {
-            "DownstreamPathTemplate": "/api/auth/{everything}",
+            "UpstreamPathTemplate": "/api/auth/login",
+            "UpstreamHttpMethod": [ "POST" ],
+            "DownstreamPathTemplate": "/api/auth/login",
             "DownstreamScheme": "https",
             "DownstreamHostAndPorts": [
                 {
                     "Host": "localhost",
                     "Port": 7002
                 }
-            ],
-            "UpstreamPathTemplate": "/api/auth/{everything}",
-            "UpstreamHttpMethod": [ "POST", "GET" ]
-        }
-    ],
-    "SwaggerEndPoints": [
+            ]
+        },
         {
-            "Key": "AuthAPI",
-            "Config": [
+            "UpstreamPathTemplate": "/api/auth/register",
+            "UpstreamHttpMethod": [ "POST" ],
+            "DownstreamPathTemplate": "/api/auth/register",
+            "DownstreamScheme": "https",
+            "DownstreamHostAndPorts": [
                 {
-                    "Name": "Auth API",
-                    "Version": "v1",
-                    "Url": "https://localhost:7002/swagger/v1/swagger.json"
+                    "Host": "localhost",
+                    "Port": 7002
+                }
+            ]
+        },
+        {
+            "UpstreamPathTemplate": "/api/auth/test",
+            "UpstreamHttpMethod": [ "GET" ],
+            "DownstreamPathTemplate": "/api/auth/test",
+            "DownstreamScheme": "https",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 7002
                 }
             ]
         }
