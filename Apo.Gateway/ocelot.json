@@ -54,7 +54,11 @@
                     "Host": "localhost",
                     "Port": 7001
                 }
-            ]
+            ],
+            "AuthenticationOptions": {
+                "AuthenticationProviderKey": "Bearer",
+                "AllowedScopes": []
+            }
         },
         {
             "UpstreamPathTemplate": "/api/coupon/{id}",
@@ -66,7 +70,11 @@
                     "Host": "localhost",
                     "Port": 7001
                 }
-            ]
+            ],
+            "AuthenticationOptions": {
+                "AuthenticationProviderKey": "Bearer",
+                "AllowedScopes": []
+            }
         },
         {
             "UpstreamPathTemplate": "/api/coupon/GetByCode/{code}",
@@ -78,7 +86,11 @@
                     "Host": "localhost",
                     "Port": 7001
                 }
-            ]
+            ],
+            "AuthenticationOptions": {
+                "AuthenticationProviderKey": "Bearer",
+                "AllowedScopes": []
+            }
         },
         {
             "UpstreamPathTemplate": "/api/coupon",

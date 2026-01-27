@@ -9,10 +9,22 @@ namespace Apo.Web.Service
     public class BaseService : IBaseService
     {
         private readonly IHttpClientFactory _httpClientFactory;
+        private readonly ITokenProvider _tokenProvider;
 
-        public BaseService(IHttpClientFactory httpClientFactory)
+        public BaseService(IHttpClientFactory httpClientFactory, ITokenProvider tokenProvider)
         {
             _httpClientFactory = httpClientFactory;
+            _tokenProvider = tokenProvider;
+        }
+
+        private HttpClient AddBearerToken(HttpClient client) 
+        {
+            var token = _tokenProvider.GetToken();
+            if (!string.IsNullOrEmpty(token)) 
+            { 
+                client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", token); 
+            }
+            return client;
         }
 
         public async Task<ResponseDto?> SendAsync(RequestDto requestDto)
@@ -20,9 +32,13 @@ namespace Apo.Web.Service
             try
             {
                 HttpClient client = _httpClientFactory.CreateClient("ApoAPI");
+
+                client = AddBearerToken(client);
                 HttpRequestMessage message = new HttpRequestMessage();
                 message.Headers.Add("Accept", "application/json");
                 //TODO: Add token
+
+
 
                 message.RequestUri = new Uri(requestDto.Url);
                 if (requestDto.Data != null)

@@ -1,6 +1,5 @@
 ﻿using Apo.Web.Models;
 using Apo.Web.Service.IService;
-using AspNetCoreGeneratedDocument;
 
 namespace Apo.Web.Service
 {
