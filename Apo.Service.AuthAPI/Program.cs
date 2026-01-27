@@ -3,7 +3,6 @@ using Apo.Service.AuthAPI.Models;
 using Apo.Service.AuthAPI.Service;
 using Apo.Service.AuthAPI.Service.IService;
 using Apo.Services.AuthAPI.Data;
-using Apo.Services.AuthAPI.Models;
 using FluentValidation;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;

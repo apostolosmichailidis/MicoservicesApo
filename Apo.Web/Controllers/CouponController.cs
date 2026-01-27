@@ -1,9 +1,5 @@
-﻿using System.Collections.Generic;
-using System.Reflection;
-using Apo.Web.Models;
-using Apo.Web.Service;
+﻿using Apo.Web.Models;
 using Apo.Web.Service.IService;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 
