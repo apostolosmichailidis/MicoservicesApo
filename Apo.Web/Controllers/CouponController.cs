@@ -9,7 +9,6 @@ using Newtonsoft.Json;
 
 namespace Apo.Web.Controllers
 {
-    [Authorize]
     public class CouponController : Controller
     {
         private readonly ICouponService _couponService;
