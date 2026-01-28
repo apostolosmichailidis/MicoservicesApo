@@ -1,0 +1,6 @@
+@Apo.Service.ProductAPI_HostAddress = http://localhost:5242
+
+GET {{Apo.Service.ProductAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
