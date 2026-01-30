@@ -3,68 +3,68 @@ using Apo.Web.Service.IService;
 
 namespace Apo.Web.Service
 {
-    public class ProductService : IProductService
+    public class CouponService : ICouponService
     {
         private IBaseService _baseService;
 
-        public ProductService(IBaseService baseService)
+        public CouponService(IBaseService baseService)
         {
             _baseService = baseService;
         }
 
-        public async Task<ResponseDto?> CreateUpdateProductAsync(ProductDto productDto)
+        public async Task<ResponseDto?> CreateUpdateCouponAsync(CouponDto couponDto)
         {
             return await _baseService.SendAsync(new RequestDto()
             {
                 ApiType = Apo.Web.Utility.SD.ApiType.POST,
-                Data = productDto,
-                Url = Apo.Web.Utility.SD.ProductAPIBase + $"/api/coupon"
+                Data = couponDto,
+                Url = Apo.Web.Utility.SD.CouponAPIBase + $"/api/coupon"
             });
         }
 
-        public async Task<ResponseDto?> DeleteProductAsync(int id)
+        public async Task<ResponseDto?> DeleteCouponAsync(int id)
         {
             return await _baseService.SendAsync(new RequestDto()
             {
                 ApiType = Apo.Web.Utility.SD.ApiType.DELETE,
-                Url = Apo.Web.Utility.SD.ProductAPIBase + $"/api/product/{id}"
+                Url = Apo.Web.Utility.SD.CouponAPIBase + $"/api/coupon/{id}"
             });
         }
 
-        public async Task<ResponseDto?> GetAllProductsAsync()
+        public async Task<ResponseDto?> GetAllCouponsAsync()
         {
             return await _baseService.SendAsync(new RequestDto()
             {
                 ApiType = Apo.Web.Utility.SD.ApiType.GET,
-                Url = Apo.Web.Utility.SD.ProductAPIBase + "/api/product"
+                Url = Apo.Web.Utility.SD.CouponAPIBase + "/api/coupon"
             });
         }
 
-        public async Task<ResponseDto?> GetProductByIdAsync(int id)
+        public async Task<ResponseDto?> GetCoupnByIdAsync(int id)
         {
             return await _baseService.SendAsync(new RequestDto() 
             {
                 ApiType = Apo.Web.Utility.SD.ApiType.GET, 
-                Url = Apo.Web.Utility.SD.ProductAPIBase + $"/api/product/{id}" 
+                Url = Apo.Web.Utility.SD.CouponAPIBase + $"/api/coupon/{id}" 
             });
         }
 
-        public async Task<ResponseDto?> GetProductByNameAsync(string productName)
+        public async Task<ResponseDto?> GetCouponByCodeAsync(string couponCode)
         {
             return await _baseService.SendAsync(new RequestDto()
             {
                 ApiType = Apo.Web.Utility.SD.ApiType.GET,
-                Url = Apo.Web.Utility.SD.ProductAPIBase + $"/api/product/GetByName/{productName}"
+                Url = Apo.Web.Utility.SD.CouponAPIBase + $"/api/coupon/GetByCode/{couponCode}"
             });
         }
 
-        public async Task<ResponseDto?> UpdateProductAsync(ProductDto productDto)
+        public async Task<ResponseDto?> UpdateCouponAsync(CouponDto couponDto)
         {
             return await _baseService.SendAsync(new RequestDto()
             {
                 ApiType = Apo.Web.Utility.SD.ApiType.PUT,
-                Data = productDto,
-                Url = Apo.Web.Utility.SD.ProductAPIBase + $"/api/product"
+                Data = couponDto,
+                Url = Apo.Web.Utility.SD.CouponAPIBase + $"/api/coupon"
             });
         }
     }
