@@ -18,7 +18,7 @@ namespace Apo.Web.Service
             {
                 ApiType = Apo.Web.Utility.SD.ApiType.POST,
                 Data = productDto,
-                Url = Apo.Web.Utility.SD.ProductAPIBase + $"/api/coupon"
+                Url = Apo.Web.Utility.SD.ProductAPIBase + $"/api/product"
             });
         }
 
