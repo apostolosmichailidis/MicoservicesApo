@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Apo.Services.CouponAPI.Models
+namespace Apo.Service.CouponAPI.Models
 {
     public class Coupon
     {   

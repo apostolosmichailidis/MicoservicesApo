@@ -1,6 +1,6 @@
-@Apo.Services.CouponAPI_HostAddress = http://localhost:5011
+@Apo.Service.CouponAPI_HostAddress = http://localhost:5011
 
-GET {{Apo.Services.CouponAPI_HostAddress}}/weatherforecast/
+GET {{Apo.Service.CouponAPI_HostAddress}}/weatherforecast/
 Accept: application/json
 
 ###

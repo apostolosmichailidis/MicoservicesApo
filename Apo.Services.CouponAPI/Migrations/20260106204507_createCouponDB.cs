@@ -4,7 +4,7 @@
 
 #pragma warning disable CA1814 // Prefer jagged arrays over multidimensional
 
-namespace Apo.Services.CouponAPI.Migrations
+namespace Apo.Service.CouponAPI.Migrations
 {
     /// <inheritdoc />
     public partial class createCouponDB : Migration

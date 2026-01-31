@@ -11,7 +11,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Integration", "Integration"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{05F8F280-E751-45B4-8603-E277614D0967}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Apo.Services.CouponAPI", "Apo.Services.CouponAPI\Apo.Services.CouponAPI.csproj", "{1A7ACC9D-5243-44D3-B33E-1278E13B14DE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Apo.Service.CouponAPI", "Apo.Services.CouponAPI\Apo.Service.CouponAPI.csproj", "{1A7ACC9D-5243-44D3-B33E-1278E13B14DE}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Apo.Web", "Apo.Web\Apo.Web.csproj", "{48A491F6-D089-4704-B914-CF6962E757C2}"
 EndProject

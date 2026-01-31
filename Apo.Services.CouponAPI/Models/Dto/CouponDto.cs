@@ -1,4 +1,4 @@
-﻿namespace Apo.Services.CouponAPI.Models.Dto
+﻿namespace Apo.Service.CouponAPI.Models.Dto
 {
     public class CouponDto
     {

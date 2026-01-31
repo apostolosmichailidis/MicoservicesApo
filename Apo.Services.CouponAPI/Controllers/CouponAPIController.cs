@@ -1,10 +1,10 @@
-﻿using Apo.Services.CouponAPI.Data;
-using Apo.Services.CouponAPI.Models;
-using Apo.Services.CouponAPI.Models.Dto;
+﻿using Apo.Service.CouponAPI.Data;
+using Apo.Service.CouponAPI.Models;
+using Apo.Service.CouponAPI.Models.Dto;
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Apo.Services.CouponAPI.Controllers
+namespace Apo.Service.CouponAPI.Controllers
 {
     [Route("api/coupon")]
     [ApiController]

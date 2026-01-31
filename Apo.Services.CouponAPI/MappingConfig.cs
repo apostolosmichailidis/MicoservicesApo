@@ -1,8 +1,8 @@
-﻿using Apo.Services.CouponAPI.Models;
-using Apo.Services.CouponAPI.Models.Dto;
+﻿using Apo.Service.CouponAPI.Models;
+using Apo.Service.CouponAPI.Models.Dto;
 using AutoMapper;
 
-namespace Apo.Services.CouponAPI
+namespace Apo.Service.CouponAPI
 {
     public class MappingConfig
     {

@@ -1,7 +1,7 @@
-﻿using Apo.Services.CouponAPI.Models;
+﻿using Apo.Service.CouponAPI.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace Apo.Services.CouponAPI.Data
+namespace Apo.Service.CouponAPI.Data
 {
     public class AppDbContext : DbContext
     {

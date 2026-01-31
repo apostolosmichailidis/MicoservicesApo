@@ -1,5 +1,5 @@
-using Apo.Services.CouponAPI;
-using Apo.Services.CouponAPI.Data;
+using Apo.Service.CouponAPI;
+using Apo.Service.CouponAPI.Data;
 using AutoMapper;
 using Microsoft.EntityFrameworkCore;
 
