@@ -43,7 +43,7 @@ namespace Apo.Messaging.Tests
             using var connection = await factory.CreateConnectionAsync();
             using var channel = await connection.CreateChannelAsync();
 
-            var queueName = "test_key"; // όπως το φτιάχνει ο publisher
+            var queueName = "test_key"; 
 
             var result = await channel.BasicGetAsync(queueName, autoAck: true);
 
