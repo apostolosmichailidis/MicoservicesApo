@@ -27,6 +27,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Messaging", "Messaging", "{
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Apo.Messaging", "Apo.Messaging\Apo.Messaging.csproj", "{F42998BC-5C09-4BC7-B7B3-BC61FDA139D8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Apo.Messaging.Tests", "Apo.Messaging.Tests\Apo.Messaging.Tests.csproj", "{77FB1096-5DBB-4B1F-8C37-2FCA5968D6F2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -61,6 +63,10 @@ Global
 		{F42998BC-5C09-4BC7-B7B3-BC61FDA139D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F42998BC-5C09-4BC7-B7B3-BC61FDA139D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F42998BC-5C09-4BC7-B7B3-BC61FDA139D8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{77FB1096-5DBB-4B1F-8C37-2FCA5968D6F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{77FB1096-5DBB-4B1F-8C37-2FCA5968D6F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{77FB1096-5DBB-4B1F-8C37-2FCA5968D6F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{77FB1096-5DBB-4B1F-8C37-2FCA5968D6F2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -73,6 +79,7 @@ Global
 		{91CC9A61-BFCA-430F-9F1E-1C0A6283136C} = {05F8F280-E751-45B4-8603-E277614D0967}
 		{2EC05524-F0C8-4DC0-92BA-538683C570D6} = {05F8F280-E751-45B4-8603-E277614D0967}
 		{F42998BC-5C09-4BC7-B7B3-BC61FDA139D8} = {555A0A66-C91B-4413-B9F3-67A6BF80D383}
+		{77FB1096-5DBB-4B1F-8C37-2FCA5968D6F2} = {555A0A66-C91B-4413-B9F3-67A6BF80D383}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A124197E-C220-4FD9-B0D9-70BEB4336D3C}
