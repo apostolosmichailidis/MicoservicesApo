@@ -37,6 +37,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ProductAPI", "ProductAPI", 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ShoppingCartAPI", "ShoppingCartAPI", "{F9FD3DCF-EBE2-4BE8-A61F-05FDBB609709}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Apo.Services.CouponAPI_V2", "Apo.Services.CouponAPI_V2\Apo.Services.CouponAPI_V2.csproj", "{777D2D9B-ED3E-4DBF-AF3A-8928D4F4F0AD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -75,6 +77,10 @@ Global
 		{77FB1096-5DBB-4B1F-8C37-2FCA5968D6F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{77FB1096-5DBB-4B1F-8C37-2FCA5968D6F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{77FB1096-5DBB-4B1F-8C37-2FCA5968D6F2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{777D2D9B-ED3E-4DBF-AF3A-8928D4F4F0AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{777D2D9B-ED3E-4DBF-AF3A-8928D4F4F0AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{777D2D9B-ED3E-4DBF-AF3A-8928D4F4F0AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{777D2D9B-ED3E-4DBF-AF3A-8928D4F4F0AD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -92,6 +98,7 @@ Global
 		{03851530-0150-486D-BAC2-77E0CE677825} = {05F8F280-E751-45B4-8603-E277614D0967}
 		{68067AE6-08A5-4F45-A6CC-443BA7773C59} = {05F8F280-E751-45B4-8603-E277614D0967}
 		{F9FD3DCF-EBE2-4BE8-A61F-05FDBB609709} = {05F8F280-E751-45B4-8603-E277614D0967}
+		{777D2D9B-ED3E-4DBF-AF3A-8928D4F4F0AD} = {03851530-0150-486D-BAC2-77E0CE677825}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A124197E-C220-4FD9-B0D9-70BEB4336D3C}
