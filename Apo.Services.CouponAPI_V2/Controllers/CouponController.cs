@@ -1,10 +1,10 @@
-﻿using Apo.Services.CouponAPI_V2.Features.Coupons;
-using Apo.Services.CouponAPI_V2.Features.Coupons.Create;
-using Apo.Services.CouponAPI_V2.Features.Coupons.Delete;
-using Apo.Services.CouponAPI_V2.Features.Coupons.GetAll;
-using Apo.Services.CouponAPI_V2.Features.Coupons.GetByCode;
-using Apo.Services.CouponAPI_V2.Features.Coupons.GetById;
-using Apo.Services.CouponAPI_V2.Features.Coupons.Update;
+﻿using Apo.Services.CouponAPI_V2.Application.Features.Coupons;
+using Apo.Services.CouponAPI_V2.Application.Features.Coupons.Create;
+using Apo.Services.CouponAPI_V2.Application.Features.Coupons.Delete;
+using Apo.Services.CouponAPI_V2.Application.Features.Coupons.GetAll;
+using Apo.Services.CouponAPI_V2.Application.Features.Coupons.GetByCode;
+using Apo.Services.CouponAPI_V2.Application.Features.Coupons.GetById;
+using Apo.Services.CouponAPI_V2.Application.Features.Coupons.Update;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 

@@ -2,7 +2,7 @@
 using AutoMapper;
 using MediatR;
 
-namespace Apo.Services.CouponAPI_V2.Features.Coupons.GetByCode
+namespace Apo.Services.CouponAPI_V2.Application.Features.Coupons.GetByCode
 {
     public class GetCouponByCodeHandler : IRequestHandler<GetCouponByCodeQuery, CouponDto>
     {

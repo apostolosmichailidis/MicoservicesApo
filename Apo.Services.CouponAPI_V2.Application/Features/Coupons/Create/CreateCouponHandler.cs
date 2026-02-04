@@ -3,7 +3,7 @@ using Apo.Services.CouponAPI_V2.Infrastructure;
 using AutoMapper;
 using MediatR;
 
-namespace Apo.Services.CouponAPI_V2.Features.Coupons.Create
+namespace Apo.Services.CouponAPI_V2.Application.Features.Coupons.Create
 {
     public class CreateCouponHandler : IRequestHandler<CreateCouponCommand, CouponDto>
     {

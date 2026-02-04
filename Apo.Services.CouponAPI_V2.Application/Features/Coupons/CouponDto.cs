@@ -1,4 +1,4 @@
-﻿namespace Apo.Services.CouponAPI_V2.Features.Coupons
+﻿namespace Apo.Services.CouponAPI_V2.Application.Features.Coupons
 {
     public class CouponDto
     {

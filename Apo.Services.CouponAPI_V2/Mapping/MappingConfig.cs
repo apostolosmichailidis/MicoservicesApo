@@ -1,5 +1,5 @@
-﻿using Apo.Services.CouponAPI_V2.Domain;
-using Apo.Services.CouponAPI_V2.Features.Coupons;
+﻿using Apo.Services.CouponAPI_V2.Application.Features.Coupons;
+using Apo.Services.CouponAPI_V2.Domain;
 using AutoMapper;
 
 namespace Apo.Service.CouponAPI_v2.Mapping

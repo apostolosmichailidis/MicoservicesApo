@@ -1,7 +1,7 @@
 ﻿using Apo.Services.CouponAPI_V2.Infrastructure;
 using MediatR;
 
-namespace Apo.Services.CouponAPI_V2.Features.Coupons.Delete
+namespace Apo.Services.CouponAPI_V2.Application.Features.Coupons.Delete
 {
     public class DeleteCouponHandler
         : IRequestHandler<DeleteCouponCommand, bool>
