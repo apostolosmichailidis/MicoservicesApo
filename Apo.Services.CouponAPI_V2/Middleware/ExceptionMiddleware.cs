@@ -47,5 +47,4 @@ namespace Apo.Services.CouponAPI_V2.Middleware
             }
         }
     }
-
 }
