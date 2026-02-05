@@ -4,6 +4,7 @@ using MediatR;
 using Microsoft.EntityFrameworkCore;
 using Apo.Services.CouponAPI_V2.Infrastructure;
 using Apo.Services.CouponAPI_V2.Application;
+using Apo.Services.CouponAPI_V2.Middleware;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -19,13 +20,14 @@ builder.Services.AddSingleton(mapper);
 builder.Services.AddApplication();
 
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
-builder.Services.AddMediatR(typeof(Program));
 
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
+
+app.UseMiddleware<ExceptionMiddleware>();
 
 if (app.Environment.IsDevelopment())
 {
