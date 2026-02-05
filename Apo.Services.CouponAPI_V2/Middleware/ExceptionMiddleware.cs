@@ -20,6 +20,15 @@ namespace Apo.Services.CouponAPI_V2.Middleware
             }
             catch (NotFoundException ex)
             {
+                context.Response.StatusCode = StatusCodes.Status404NotFound;
+                await context.Response.WriteAsJsonAsync(new ResponseDto
+                {
+                    IsSuccess = false,
+                    Message = ex.Message
+                });
+            }
+            catch (ValidationException ex)
+            {
                 context.Response.StatusCode = StatusCodes.Status400BadRequest;
                 await context.Response.WriteAsJsonAsync(new ResponseDto
                 {
