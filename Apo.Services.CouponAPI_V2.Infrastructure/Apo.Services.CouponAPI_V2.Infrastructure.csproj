@@ -12,7 +12,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Apo.Services.CouponAPI_V2.Application\Apo.Services.CouponAPI_V2.Application.csproj" />
-    <ProjectReference Include="..\Apo.Services.CouponAPI_V2.Domain\Apo.Services.CouponAPI_V2.Domain.csproj" />
   </ItemGroup>
 
 </Project>
