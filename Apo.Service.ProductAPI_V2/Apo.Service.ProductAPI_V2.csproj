@@ -22,7 +22,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Apo.Services.ProdictAPI_V2.Infrastructure\Apo.Services.ProdictAPI_V2.Infrastructure.csproj" />
+    <ProjectReference Include="..\Apo.Services.ProdictAPI_V2.Infrastructure\Apo.Services.ProductAPI_V2.Infrastructure.csproj" />
     <ProjectReference Include="..\Apo.Services.ProductAPI_V2.Application\Apo.Services.ProductAPI_V2.Application.csproj" />
   </ItemGroup>
 

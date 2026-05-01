@@ -47,7 +47,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Apo.Services.ProductAPI_V2.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Apo.Services.ProductAPI_V2.Domain", "Apo.Services.ProductAPI_V2.Domain\Apo.Services.ProductAPI_V2.Domain.csproj", "{F7E839E5-A21B-4AE1-A311-0775B30367BD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Apo.Services.ProdictAPI_V2.Infrastructure", "Apo.Services.ProdictAPI_V2.Infrastructure\Apo.Services.ProdictAPI_V2.Infrastructure.csproj", "{739BE628-01B0-4E68-8A86-89934520C969}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Apo.Services.ProductAPI_V2.Infrastructure", "Apo.Services.ProdictAPI_V2.Infrastructure\Apo.Services.ProductAPI_V2.Infrastructure.csproj", "{739BE628-01B0-4E68-8A86-89934520C969}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
