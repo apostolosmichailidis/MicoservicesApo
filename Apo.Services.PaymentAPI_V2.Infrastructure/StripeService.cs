@@ -52,8 +52,8 @@ namespace Apo.Services.PaymentAPI_V2.Infrastructure
                 {
                     var eventType = stripeEvent.Type switch
                     {
-                        Events.PaymentIntentSucceeded => "succeeded",
-                        Events.PaymentIntentPaymentFailed => "failed",
+                        //Events.PaymentIntentSucceeded => "succeeded",
+                        //Events.PaymentIntentPaymentFailed => "failed",
                         _ => stripeEvent.Type
                     };
                     return (intent.Id, eventType);

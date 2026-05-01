@@ -1,0 +1,102 @@
+name: Build and push container images
+
+on:
+  workflow_dispatch:
+    inputs:
+      service:
+        description: 'Service to build'
+        required: true
+        default: 'gateway'
+        type: choice
+        options:
+          - gateway
+          - auth-api
+          - email-api-v2
+          - payment-api-v2
+          - product-api
+          - product-api-v2
+          - shoppingcart-api
+          - coupon-api
+          - coupon-api-v2
+          - web-frontend
+      tag:
+        description: 'Image tag (optional, defaults to latest)'
+        required: false
+        default: 'latest'
+        type: string
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 8.0.x
+
+      - name: Restore solution
+        run: dotnet restore MicroservicesApo.sln
+
+      - name: Build solution
+        run: dotnet build MicroservicesApo.sln --configuration Release --no-restore
+
+      - name: Run tests
+        run: dotnet test Apo.Messaging.Tests/Apo.Messaging.Tests.csproj --configuration Release --no-restore
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Log in to GitHub Container Registry
+        uses: docker/login-action@v5
+        with:
+          registry: ghcr.io
+          username: ${{ github.repository_owner }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Get service config
+        id: service-config
+        run: |
+          case "${{ inputs.service }}" in
+            gateway)
+              echo "dockerfile=Apo.Gateway/Dockerfile" >> $GITHUB_OUTPUT
+              ;;
+            auth-api)
+              echo "dockerfile=Apo.Service.AuthAPI/Dockerfile" >> $GITHUB_OUTPUT
+              ;;
+            email-api-v2)
+              echo "dockerfile=Apo.Service.EmailAPI_V2/Dockerfile" >> $GITHUB_OUTPUT
+              ;;
+            payment-api-v2)
+              echo "dockerfile=Apo.Service.PaymentAPI_V2/Dockerfile" >> $GITHUB_OUTPUT
+              ;;
+            product-api)
+              echo "dockerfile=Apo.Service.ProductAPI/Dockerfile" >> $GITHUB_OUTPUT
+              ;;
+            product-api-v2)
+              echo "dockerfile=Apo.Service.ProductAPI_V2/Dockerfile" >> $GITHUB_OUTPUT
+              ;;
+            shoppingcart-api)
+              echo "dockerfile=Apo.Service.ShoppingCartAPI/Dockerfile" >> $GITHUB_OUTPUT
+              ;;
+            coupon-api)
+              echo "dockerfile=Apo.Services.CouponAPI/Dockerfile" >> $GITHUB_OUTPUT
+              ;;
+            coupon-api-v2)
+              echo "dockerfile=Apo.Services.CouponAPI_V2/Dockerfile" >> $GITHUB_OUTPUT
+              ;;
+            web-frontend)
+              echo "dockerfile=Apo.Web/Dockerfile" >> $GITHUB_OUTPUT
+              ;;
+          esac
+
+      - name: Build and push image
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          file: ${{ steps.service-config.outputs.dockerfile }}
+          push: true
+          tags: |
+            ghcr.io/${{ github.repository_owner }}/${{ inputs.service }}:${{ inputs.tag }}
+            ghcr.io/${{ github.repository_owner }}/${{ inputs.service }}:${{ github.sha }}
