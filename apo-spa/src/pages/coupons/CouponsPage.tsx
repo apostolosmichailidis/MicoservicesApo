@@ -61,7 +61,6 @@ export default function CouponsPage() {
                   <td className="px-4 py-3 text-right text-green-600">
                     ${c.discountAmount.toFixed(2)}
                   </td>
-                  <td className="px-4 py-3 text-right">${c.minAmount.toFixed(2)}</td>
                   <td className="px-4 py-3 text-center">
                     <button
                       onClick={() => handleDelete(c.couponId)}

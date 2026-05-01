@@ -6,6 +6,19 @@ using Apo.Gateway;
 
 var builder = WebApplication.CreateBuilder(args);
 
+// Add CORS configuration
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowReactClient", builder =>
+    {
+        builder
+            .WithOrigins("http://localhost:5173", "https://localhost:5173", "http://localhost:3000")
+            .AllowAnyMethod()
+            .AllowAnyHeader()
+            .AllowCredentials();
+    });
+});
+
 builder.Services.AddAuthentication(options =>
 {
     options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
@@ -22,6 +35,10 @@ builder.Configuration.AddJsonFile("ocelot.json", optional: false, reloadOnChange
 builder.Services.AddOcelot(builder.Configuration);
 
 var app = builder.Build();
+
+// Enable CORS before Ocelot
+app.UseCors("AllowReactClient");
+
 await app.UseOcelot();
 
 app.Run();
