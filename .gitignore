@@ -29,3 +29,13 @@ secrets.json
 
 Apo.Service.AuthAPI/Keys/
 
+# Key files
+keys/
+*.pem
+
+# Docker and infrastructure files
+Presentation.pptx
+docker-compose.yml
+create-db.sh
+init-db.sql
+
