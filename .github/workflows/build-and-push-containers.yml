@@ -2,6 +2,7 @@ name: Build and push container images
 
 on:
   workflow_dispatch:
+    # Manual trigger so a maintainer can choose which service to build.
     inputs:
       service:
         description: 'Service to build'
@@ -26,42 +27,43 @@ on:
         type: string
 
 permissions:
-  contents: read
-  packages: write
+  contents: read          # allow checkout of repository contents
+  packages: write         # allow pushing images to GitHub Packages / GHCR
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-
+        # Fetch repository code so the workflow can build the project.
       - name: Set up .NET
         uses: actions/setup-dotnet@v4
         with:
           dotnet-version: 8.0.x
-
+        # Install .NET 8 SDK required for building the solution.
       - name: Restore solution
         run: dotnet restore MicroservicesApo.sln
-
+        # Restore NuGet packages for the entire solution.
       - name: Build solution
         run: dotnet build MicroservicesApo.sln --configuration Release --no-restore
-
+        # Compile all projects in Release mode without restoring again.
       - name: Run tests
         run: dotnet test Apo.Messaging.Tests/Apo.Messaging.Tests.csproj --configuration Release --no-restore
-
+        # Run messaging integration tests to verify the build.
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
-
+        # Enable modern Docker build features and multi-platform support.
       - name: Log in to GitHub Container Registry
         uses: docker/login-action@v3
         with:
           registry: ghcr.io
           username: ${{ github.repository_owner }}
           password: ${{ secrets.GITHUB_TOKEN }}
-
+        # Authenticate to GHCR so the workflow can push container images.
       - name: Get service config
         id: service-config
         run: |
+          # Select the correct Dockerfile based on the service name.
           case "${{ inputs.service }}" in
             gateway)
               echo "dockerfile=Apo.Gateway/Dockerfile" >> $GITHUB_OUTPUT
@@ -94,7 +96,6 @@ jobs:
               echo "dockerfile=Apo.Web/Dockerfile" >> $GITHUB_OUTPUT
               ;;
           esac
-
       - name: Build and push image
         uses: docker/build-push-action@v5
         with:
@@ -104,3 +105,4 @@ jobs:
           tags: |
             ghcr.io/${{ github.repository_owner }}/${{ inputs.service }}:${{ inputs.tag }}
             ghcr.io/${{ github.repository_owner }}/${{ inputs.service }}:${{ github.sha }}
+        # Build the selected image and push it to GHCR with both tag and commit SHA.
