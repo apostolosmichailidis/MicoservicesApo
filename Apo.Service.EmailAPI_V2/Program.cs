@@ -31,7 +31,11 @@ builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
+// Exception handling middleware must be first
 app.UseMiddleware<ExceptionMiddleware>();
+
+app.UseHttpsRedirection();
+app.UseAuthorization();
 
 if (app.Environment.IsDevelopment())
 {
@@ -39,8 +43,6 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.UseHttpsRedirection();
-app.UseAuthorization();
 app.MapControllers();
 
 ApplyMigrations();
