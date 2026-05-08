@@ -49,7 +49,6 @@ export default function CouponsPage() {
                 <th className="px-4 py-3 text-left">ID</th>
                 <th className="px-4 py-3 text-left">Code</th>
                 <th className="px-4 py-3 text-right">Discount</th>
-                <th className="px-4 py-3 text-right">Min. Amount</th>
                 <th className="px-4 py-3 text-center">Actions</th>
               </tr>
             </thead>
